@@ -1,5 +1,14 @@
 const todo = {
-    tasks: [], // Tasks array scoped inside the object
+    tasks: [],
+    saveTasks: function(){
+        localStorage.setItem('todoTasks', JSON.stringify(this.tasks));
+    },
+    loadTasks: function(){
+        const stored = localStorage.getItem('todoTasks');
+        if(stored){
+            this.tasks = JSON.parse(stored);
+        }
+    },
 
     add: function(text) {
         if (!text || typeof text !== 'string') {
@@ -66,5 +75,5 @@ const todo = {
     }
 };
 
-
+todo.loadTasks();
 console.log('TODO App loaded! Type todo.help() for commands.');
