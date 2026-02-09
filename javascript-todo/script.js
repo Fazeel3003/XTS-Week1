@@ -1,12 +1,12 @@
 const todo = {
     tasks: [],  // This will be loaded from local storage on start
 
-    // Helper: Save tasks to local storage
+    // Save tasks to local storage
     saveTasks: function() {
         localStorage.setItem('todoTasks', JSON.stringify(this.tasks));
     },
 
-    // Helper: Load tasks from local storage
+    // Load tasks from local storage
     loadTasks: function() {
         const stored = localStorage.getItem('todoTasks');
         if (stored) {
@@ -50,7 +50,7 @@ const todo = {
         console.log(`Task ${id} marked as done.`);
     },
 
-    // NEW: Edit a task's text by ID
+    //  Edit a task's text by ID
     edit: function(id, newText) {
         id = parseInt(id);
         if (isNaN(id) || id < 1 || id > this.tasks.length) {
@@ -81,7 +81,7 @@ const todo = {
         console.log(`Task deleted: ${removed[0].text}. Tasks renumbered.`);
     },
 
-    // NEW: Search tasks by keyword (case-insensitive)
+    // Search tasks by keyword (case-insensitive)
     search: function(keyword) {
         if (!keyword || typeof keyword !== 'string') {
             console.log('Error: Provide a valid search keyword. Usage: todo.search("keyword")');
