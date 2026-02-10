@@ -23,7 +23,7 @@ A simple, console-based TODO application built with vanilla JavaScript. This app
 - No installation required—it's a static web app!
 ### Installation
 1. Clone or download this repository to your local machine:
-git clone https://github.com/Fazeel3003/XTS-Week1
+git clone https://github.com/Fazeel3003/XTS-Week1/tree/main/javascript-todo
 2. Navigate to the project folder and open 'index.html' in your web browser.
 3. Open your browser's developer console:
 - Press 'F12' or 'right-click' on the page and select "Inspect" > "Console" tab.
