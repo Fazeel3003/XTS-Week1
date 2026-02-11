@@ -37,12 +37,28 @@ def search_student():
         print("Student not found!")
     except ValueError:
         print("Invalid input! Please enter a number for ID.")
+# Fun ction to update a studemt
+def update_student():
+    try:
+        student_id = int(input("Enter student ID to update:"))
+        for student in students:
+            if student["id"] == student_id:
+                print("Current details:", student)
+                student["name"] = input("Enter new name (or press Enter to keep):") or student["name"]
+                student["age"] = int(input("Enter new age (or press Enter to keep): ") or student["age"])
+                student["grade"] = input("Enter new grade (or press Enter to keep): ") or student["grade"]
+                print("Student updated successfully!")
+                return
+            print("Student not found.")
+    except ValueError:
+        print("Invalid input!")
 # Main menu loop
 while True:
     print("/n--- Student Record Manager ---")
     print("1. Add Students")
     print("2. View Students")
     print("3. Search Students")
+    print("4. Update Student")
     print("7. Exit")
     choice = input("Choose an option: ")
     
@@ -51,7 +67,9 @@ while True:
     elif choice == "2":
         view_students() 
     elif choice == "3":
-        search_student() 
+        search_student()
+    elif choice == "4":
+        update_student() 
     elif choice == "7":
         print("Exiting...")
         break
