@@ -18,10 +18,17 @@ def add_student():
         print("Student added successfully!")
     except ValueError:
         print("Invalid input! Please enter numbers for ID and age.")
-
+# Function to view all students
+def view_students():
+    if not students:
+        print("No students found!")
+        return
+    print("/nStudent Records:")
+    for student in students:
+        print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grade:{student['grade']}")
 # Main menu loop
 while True:
-    print("\n--- Student Record Manager ---")
+    print("/n--- Student Record Manager ---")
     print("1. Add Student")
     print("2. View All Students")
     print("7. Exit")
@@ -30,7 +37,7 @@ while True:
     if choice == "1":
         add_student()
     elif choice == "2":
-        print("View logic here")  
+        view_students()  
     elif choice == "7":
         print("Exiting...")
         break
