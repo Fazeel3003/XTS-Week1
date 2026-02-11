@@ -26,18 +26,32 @@ def view_students():
     print("/nStudent Records:")
     for student in students:
         print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grade:{student['grade']}")
+# Function to search student by ID
+def search_student():
+    try:
+        student_id = int(input("Enter student ID to search: "))
+        for student in students:
+            if student["id"] == student_id:
+                print(f"Found: ID: {student['id']}, Name:{student['name']}, Age:{student['age']}, Grade: {student['grade']}")
+                return
+        print("Student not found!")
+    except ValueError:
+        print("Invalid input! Please enter a number for ID.")
 # Main menu loop
 while True:
     print("/n--- Student Record Manager ---")
-    print("1. Add Student")
-    print("2. View All Students")
+    print("1. Add Students")
+    print("2. View Students")
+    print("3. Search Students")
     print("7. Exit")
     choice = input("Choose an option: ")
     
     if choice == "1":
         add_student()
     elif choice == "2":
-        view_students()  
+        view_students() 
+    elif choice == "3":
+        search_student() 
     elif choice == "7":
         print("Exiting...")
         break
