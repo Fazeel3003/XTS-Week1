@@ -52,6 +52,18 @@ def update_student():
             print("Student not found.")
     except ValueError:
         print("Invalid input!")
+# Function to delete a student
+def delete_student():
+    try:
+        student_id = int(input("Enter student ID to delete:"))
+        for i, student in enumerate(students):
+            if student["id"] == student_id:
+                del students[i]
+                print("student deleted successfully!")
+                return
+            print("Student not found.")
+    except ValueError:
+        print("Invalid ID!")        
 # Main menu loop
 while True:
     print("/n--- Student Record Manager ---")
@@ -59,6 +71,7 @@ while True:
     print("2. View Students")
     print("3. Search Students")
     print("4. Update Student")
+    print("5. Delete Student")
     print("7. Exit")
     choice = input("Choose an option: ")
     
@@ -69,7 +82,9 @@ while True:
     elif choice == "3":
         search_student()
     elif choice == "4":
-        update_student() 
+        update_student()
+    elif choice == "5":
+        delete_student()     
     elif choice == "7":
         print("Exiting...")
         break
