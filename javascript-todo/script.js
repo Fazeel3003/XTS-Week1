@@ -104,6 +104,14 @@ const todo = {
         console.table(tableData);
     },
 
+    // Show stats summary (total, done, pending)
+    stats: function(){
+        const total = this.tasks.length;
+        const done = this.tasks.filter(task => task.done).lenghth;
+        const pending = total - done;
+        console.log(`Task Stats: Total: ${total}, Done: ${done}, Pending: ${pending}`);
+    },
+
     clear: function() {
         this.tasks = [];
         this.saveTasks();  // Persist after clearing (saves empty array)
@@ -117,6 +125,7 @@ const todo = {
         console.log('  todo.done(id)               - Mark task as done (id is a number)');
         console.log('  todo.edit(id, "new text")   - Edit a task\'s text (id is a number)');
         console.log('  todo.search("keyword")      - Search tasks by keyword');
+        console.log('  todo.stats()                - Show task statistics');
         console.log('  todo.delete(id)             - Delete a task and renumber remaining (id is a number)');
         console.log('  todo.clear()                - Clear all tasks');
         console.log('  todo.help()                 - Show this help');
