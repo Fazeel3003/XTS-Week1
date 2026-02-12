@@ -105,13 +105,17 @@ const todo = {
     },
 
     // Show stats summary (total, done, pending)
-    stats: function(){
+stats: function() {
+    try {
         const total = this.tasks.length;
-        const done = this.tasks.filter(task => task.done).lenghth;
+        // Explicitly check for done === true to avoid issues with non-boolean values
+        const done = this.tasks.filter(task => task.done === true).length;
         const pending = total - done;
         console.log(`Task Stats: Total: ${total}, Done: ${done}, Pending: ${pending}`);
-    },
-
+    } catch (error) {
+        console.log('Error in stats():', error.message);
+    }
+},
     clear: function() {
         this.tasks = [];
         this.saveTasks();  // Persist after clearing (saves empty array)
