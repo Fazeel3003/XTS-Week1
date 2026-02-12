@@ -44,9 +44,20 @@ def view_students():
     if not students:
         print("No students found!")
         return
-    print("\nStudent Records:")
-    for student in students:
-        print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}")
+    filter_choice = input("Filter by grade? (y/n): ").lower()
+    if filter_choice == 'y':
+        grade_filter = input("Enter grade to filter by (e.g., A, B): ").strip()
+        filtered_students = [student for student in students if student["grade"].lower() == grade_filter.lower()]
+        if not filtered_students:
+            print(f"No students found with grade '{grade_filter}'.")
+            return
+        print(f"\nStudent Records (Filtered by Grade: {grade_filter}):")
+        for student in filtered_students:
+            print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}")
+    else:
+        print("\nStudent Records:")
+        for student in students:
+            print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grade: {student['grade']}")
 
 # Function to search student by ID
 def search_student():
@@ -89,6 +100,17 @@ def delete_student():
     except ValueError:
         print("Invalid ID!")
 
+#Function to clear all students
+def clear_all_students():
+    global students
+    confirm = input("Are you sure you want to clear all students? (y/n):")
+    if confirm == 'y':
+        students = []
+        save_data()
+        print("All students cleared.")
+    else:
+        print("Clear operation cancelled")    
+
 # Main menu loop
 while True:
     print("\n--- Student Record Manager ---")
@@ -114,6 +136,8 @@ while True:
     elif choice == "6":
         save_data()
     elif choice == "7":
+        clear_all_students()
+    elif choice == "8":
         save_data()  # Auto-save before exiting
         print("Exiting...")
         break
