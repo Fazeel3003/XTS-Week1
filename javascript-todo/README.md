@@ -81,7 +81,7 @@ Please ensure your code follows basic JavaScript best practices and includes com
 
 ## License
 
-This project is developed in affiliation with XTS Company. Licensing details are pending review by the company. Please contact [fmemon@xtsworld.com] or the company for usage permissions. (If open-sourced, it may use MIT License—check back for updates.)
+This project is for educational purposes. Feel free to use or modify it.
 
 ## Acknowledgments
 
