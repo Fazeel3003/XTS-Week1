@@ -1,6 +1,6 @@
 # Student Record Manager
 
-A simple command-line interface (CLI) application built in Python for managing student records. This project demonstrates basic CRUD operations (Create, Read, Update, Delete), data persistence using JSON files, and input validation. It's designed as a demo project to showcase Python fundamentals like lists, dictionaries, file I/O, and error handling.
+A simple command-line interface (CLI) application built in Python for managing student records. This project demonstrates basic CRUD operations (Create, Read, Update, Delete), data persistence using JSON file, and input validation. It's designed as a demo project to showcase Python fundamentals like lists, dictionaries, file I/O, and error handling.
 
 ## Features
 - **Add Students**: Input student details (ID, name, age, grade) with duplicate ID checks.
@@ -67,7 +67,7 @@ Follow the on-screen menu to interact with the app. Data is automatically saved 
 - Tested on Windows/Linux/Mac. Ensure write permissions for the directory to save data.
 
 ## Contributing
-Feel free to fork and submit pull requests for improvements (e.g., adding more fields or sorting options).
+Feel free to fork and submit pull requests for improvements.
 
 ## License
 This project is open-source and available under the MIT License. Use at your own risk.
