@@ -100,16 +100,16 @@ def delete_student():
     except ValueError:
         print("Invalid ID!")
 
-#Function to clear all students
+# Function to clear all students
 def clear_all_students():
     global students
-    confirm = input("Are you sure you want to clear all students? (y/n):")
+    confirm = input("Are you sure you want to clear all students? (y/n): ").lower()  
     if confirm == 'y':
         students = []
         save_data()
         print("All students cleared.")
     else:
-        print("Clear operation cancelled")    
+        print("Clear operation cancelled.")  
 
 # Main menu loop
 while True:
@@ -120,7 +120,8 @@ while True:
     print("4. Update Student")
     print("5. Delete Student")
     print("6. Save Data")
-    print("7. Exit")
+    print("7. Clear All Students")  
+    print("8. Exit")  
     choice = input("Choose an option: ")
     
     if choice == "1":
