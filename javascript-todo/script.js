@@ -126,11 +126,11 @@ stats: function() {
         console.log('Console TODO App Commands:');
         console.log('  todo.add("task text")       - Add a new task');
         console.log('  todo.list()                 - List all tasks in a table');
-        console.log('  todo.done(id)               - Mark task as done (id is a number)');
-        console.log('  todo.edit(id, "new text")   - Edit a task\'s text (id is a number)');
+        console.log('  todo.done(id)               - Mark task as done ');
+        console.log('  todo.edit(id, "new text")   - Edit a task\'s text ');
         console.log('  todo.search("keyword")      - Search tasks by keyword');
         console.log('  todo.stats()                - Show task statistics');
-        console.log('  todo.delete(id)             - Delete a task and renumber remaining (id is a number)');
+        console.log('  todo.delete(id)             - Delete a task and renumber remaining ');
         console.log('  todo.clear()                - Clear all tasks');
         console.log('  todo.help()                 - Show this help');
         console.log('Example: todo.add("Buy milk"); todo.list(); todo.edit(1, "Buy almond milk"); todo.search("milk");');
